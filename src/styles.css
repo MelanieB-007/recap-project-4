@@ -25,7 +25,6 @@ body {
     flex-shrink: 0;
 }
 
-/* HEADER */
 .header {
     display: flex;
     justify-content: center;
@@ -119,7 +118,7 @@ body {
     background: rgba(0, 123, 255, 0.25);
 }
 
-/* MOBILE EXTRAS */
+
 @media (max-width: 480px) {
     .glass-container {
         width: 95vw;
@@ -136,4 +135,3 @@ body {
         margin-bottom: 8px;
     }
 }
-

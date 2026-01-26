@@ -1,13 +1,18 @@
+import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
 import "./Components/Color/Color.css";
 
 function App() {
+
     return (
-        <div className="colors-grid">  {/* Fragment – direkt in #root */}
+        <div className="colors-grid">
+            {initialColors.map(({id, hex, role, contrastText}) => (
             <Color
-                color="#ff4a11"
-                role="primary main"
-                contrastText="#FFFFFF" />
+                key={id}
+                color={hex}
+                role={role}
+                contrastText={contrastText} />
+            ))}
         </div>
     );
 }
