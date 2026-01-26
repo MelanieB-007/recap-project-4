@@ -1,14 +1,19 @@
 import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
-import "./App.css";
+import "./Components/Color/Color.css";
 
 function App() {
-  return (
-    <>
-      <h1>Theme Creator</h1>
-      // display colors here
-    </>
-  );
-}
 
+    return (
+        <div className="colors-grid">
+            {initialColors.map(({id, hex, role, contrastText}) => (
+            <Color
+                key={id}
+                color={hex}
+                role={role}
+                contrastText={contrastText} />
+            ))}
+        </div>
+    );
+}
 export default App;
