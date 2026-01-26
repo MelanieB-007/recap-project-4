@@ -7,12 +7,24 @@ import {useState} from "react";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
+    const [isFormVisible, setIsFormVisible] = useState(false);
 
     return (
         <>
-            <div className="formAddButton">
-                <AddColorForm colors={colors} setColors={setColors} />
+            <div className="input-area">
+                {/* Optional: Dein Input oder Label hier */}
+
+                <button className="plus-toggle-btn" onClick={() => setIsFormVisible(!isFormVisible)}>
+                    +
+                </button>
             </div>
+
+            {isFormVisible && (
+                <div className="formAddButton">
+                    <AddColorForm colors={colors} setColors={setColors} />
+                </div>
+            )}
+
             <div className="colors-grid">
                 {colors.map(({id, hex, role, contrastText}) => (
                 <Color

@@ -10,6 +10,17 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .formAddButton form {
     display: flex;
     flex-direction: column;
