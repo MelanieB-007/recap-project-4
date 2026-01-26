@@ -55,17 +55,17 @@
     width: 30px !important;
     height: 46px;
     padding: 0;
-    border: 2px solid rgba(0, 0, 0, 0.1);  /* ← Gleicher Rahmen wie Text */
-    border-radius: 12px !important;        /* ← Gleicher Radius! */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px !important;
     cursor: pointer;
     flex-shrink: 0;
-    background-clip: content-box;          /* Farbe füllt nur Innen */
-    appearance: none;                      /* Browser-Styles entfernen */
+    background-clip: content-box;
+    appearance: none;
     position: relative;
 }
 
 .formAddButton__input-row .formAddButton__input--color::-webkit-color-swatch {
-    border-radius: 10px;  /* ← Innen-Farbe abrunden (Chrome/Safari) */
+    border-radius: 10px;
     border: none;
 }
 
