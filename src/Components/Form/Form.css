@@ -53,13 +53,27 @@
 
 .formAddButton__input-row .formAddButton__input--color {
     width: 30px !important;
-    height: 44px;
+    height: 46px;
     padding: 0;
-    border: none;
-    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.1);  /* ← Gleicher Rahmen wie Text */
+    border-radius: 12px !important;        /* ← Gleicher Radius! */
     cursor: pointer;
     flex-shrink: 0;
+    background-clip: content-box;          /* Farbe füllt nur Innen */
+    appearance: none;                      /* Browser-Styles entfernen */
+    position: relative;
 }
+
+.formAddButton__input-row .formAddButton__input--color::-webkit-color-swatch {
+    border-radius: 10px;  /* ← Innen-Farbe abrunden (Chrome/Safari) */
+    border: none;
+}
+
+.formAddButton__input-row .formAddButton__input--color::-moz-color-swatch {
+    border-radius: 10px;  /* ← Firefox */
+    border: none;
+}
+
 
 .formAddButton__input--submit {
     background: linear-gradient(135deg, #3498db, #2980b9);

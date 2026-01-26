@@ -50,12 +50,14 @@ export default function AddColorForm({colors, setColors}){
                     onChange={updateHex}
                     placeholder={hex}
                     className="formAddButton__input" />
+
                 <input
                     name="hexcolor"
                     type="color"
                     value={hex}
                     onChange={updateHex}
                     className="formAddButton__input formAddButton__input--color" />
+
             </div>
 
             <label className="formAddButton__label">
@@ -70,12 +72,14 @@ export default function AddColorForm({colors, setColors}){
                     onChange={updateContrastText}
                     placeholder={contrastText}
                     className="formAddButton__input" />
+
                 <input
                     name="contrast-textcolor"
                     type="color"
                     value={contrastText}
                     onChange={updateContrastText}
                     className="formAddButton__input formAddButton__input--color" />
+
             </div>
 
             <input
