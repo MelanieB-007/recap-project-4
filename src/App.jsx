@@ -7,12 +7,12 @@ import "./Components/Form/AddColorForm.css";
 import Color from "./Components/Color/Color";
 import "./Components/Color/Color.css";
 
-import {useState} from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-    const [colors, setColors] = useState(initialColors);
-    const [isFormVisible, setIsFormVisible] = useState(false);
-    const [selectedId, setSelectedId] = useState(null);  // Bleibt Objekt/Null
+    const [colors, setColors] = useLocalStorageState("colors", {defaultValue:initialColors});
+    const [isFormVisible, setIsFormVisible] = useLocalStorageState("isFormVisible", {defaultValue: false});
+    const [selectedId, setSelectedId] = useLocalStorageState("selectedId", {defaultValue:null});
 
     function editColor(id) {
         const color = colors.find(c => c.id === id);
