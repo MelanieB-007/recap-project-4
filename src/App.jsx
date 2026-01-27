@@ -14,7 +14,14 @@ function App() {
     const [isFormVisible, setIsFormVisible] = useState(false);
 
     function deleteColor (id){
-        setColors(colors.filter(c => c.id !== id));
+        const colorHex = colors.find(c => c.id === id)?.hex || 'diese Farbe';
+        const confirm = window.confirm(
+            `Do you really want to delete the color "${colorHex}"?\nThis action cannot be undone.`
+        );
+
+        if(confirm) {
+            setColors(colors.filter(c => c.id !== id));
+        }
     }
 
     return (
