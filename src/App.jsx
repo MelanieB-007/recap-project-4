@@ -1,9 +1,12 @@
 import { initialColors } from "./lib/colors";
+import "./App.css";
+
 import Color from "./Components/Color/Color";
 import "./Components/Color/Color.css";
-import "./App.css";
+
 import AddColorForm from "./Components/Form/AddColorForm.jsx"
-import "./Components/Form/Form.css";
+import "./Components/Form/AddColorForm.css";
+
 import {useState} from "react";
 
 function App() {
