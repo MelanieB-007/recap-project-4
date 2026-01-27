@@ -55,7 +55,7 @@ body {
     display: flex;
     align-items: flex-start !important;
     justify-content: flex-start !important;
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 3rem 1rem;
     background: linear-gradient(145deg, #00bfff 0%, #1e90ff 50%, #00bfff 100%);
     border: 1px solid rgba(0, 255, 255, 0.4);
     border-radius: 20px;
