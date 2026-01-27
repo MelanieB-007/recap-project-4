@@ -47,16 +47,22 @@ function App() {
             )}
 
             <div className="colors-grid">
-                {colors.map(({id, hex, role, contrastText}) => (
-                <Color
-                    key={id}
-                    id={id}
-                    color={hex}
-                    role={role}
-                    contrastText={contrastText}
-                    onDelete={deleteColor}
-                />
-                ))}
+                {colors.length === 0 ? (
+                    <div className="empty-state">
+                        No colors yet. ➕ Add your first color!
+                    </div>
+                ) : (
+                    colors.map(({id, hex, role, contrastText}) => (
+                    <Color
+                        key={id}
+                        id={id}
+                        color={hex}
+                        role={role}
+                        contrastText={contrastText}
+                        onDelete={deleteColor}
+                    />
+                    ))
+                )}
             </div>
         </>
     );

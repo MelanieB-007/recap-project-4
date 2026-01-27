@@ -51,6 +51,23 @@
   background: linear-gradient(135deg, #5dade2, #3498db);
 }
 
+.empty-state {
+  width: 320px;
+  height: 80px;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 28px;
+  border: 2px dashed rgba(255,255,255,0.3);
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1rem;
+}
+
 
 @media (max-width: 480px) {
   .input-area {
