@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import {useRef, useEffect, useState} from "react";
 
 export default function AddColorForm({colors, setColors, setIsFormVisible, selectedColor,
                                          isEditMode = false, onCancel}) {
-    const [role, setRole] = useState('primary');
+    const [role, setRole] = useState("primary");
     const [hex, setHex] = useState("#ff4a11");
     const [contrastText, setContrastText] = useState("#ffffff");
 
@@ -14,12 +14,12 @@ export default function AddColorForm({colors, setColors, setIsFormVisible, selec
     // Prefill für Edit-Modus
     useEffect(() => {
         if (isEditMode && selectedColor) {
-            setRole(selectedColor.role || 'primary');
-            setHex(selectedColor.hex || selectedColor.color || "#ff4a11");
-            setContrastText(selectedColor.contrastText || selectedColor.contrast || "#ffffff");
+            setRole(selectedColor.role || "primary");
+            setHex(selectedColor.hex ||  "#ff4a11");
+            setContrastText(selectedColor.contrastText || "#ffffff");
         } else {
             // Reset für Add-Modus
-            setRole('primary');
+            setRole("primary");
             setHex("#ff4a11");
             setContrastText("#ffffff");
         }
