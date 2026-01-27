@@ -20,7 +20,7 @@ export default function AddColorForm({colors, setColors}){
         const contrastText = form.elements.contrasttext.value;
 
         const newColor = {
-            id: Math.random(), role, hex, contrastText
+            id: crypto.randomUUID(), role, hex, contrastText
         };
 
         setColors([newColor, ...colors]);
