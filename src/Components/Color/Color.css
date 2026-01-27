@@ -83,3 +83,32 @@
         right: 6px;
     }
 }
+
+/* Edit-Form nur: Perfekter Glas-Look + Abstände */
+.color-card--editing {
+    height: auto !important;
+    min-height: 400px;
+    width: 100%;
+    max-width: 320px;
+    padding: 2rem 1.5rem;
+    margin: 1rem auto; /* ← Nur Edit hat Abstand oben/unten */
+    background: rgba(255, 255, 255, 0.18) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    animation: expand 0.3s ease-out;
+}
+
+.edit-header {
+    margin-bottom: 2.5rem; /* ← Mehr Platz zur Form */
+}
+
+/* Mobile Edit nur */
+@media (max-width: 480px) {
+    .color-card--editing {
+        min-height: 360px;
+        padding: 1.5rem;
+        margin: 0.75rem auto;
+    }
+}

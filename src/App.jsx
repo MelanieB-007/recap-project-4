@@ -1,17 +1,26 @@
 import { initialColors } from "./lib/colors";
 import "./App.css";
 
-import Color from "./Components/Color/Color";
-import "./Components/Color/Color.css";
-
 import AddColorForm from "./Components/Form/AddColorForm.jsx"
 import "./Components/Form/AddColorForm.css";
+
+import Color from "./Components/Color/Color";
+import "./Components/Color/Color.css";
 
 import {useState} from "react";
 
 function App() {
     const [colors, setColors] = useState(initialColors);
     const [isFormVisible, setIsFormVisible] = useState(false);
+    const [selectedId, setSelectedId] = useState(null);
+
+    function editColor(id) {
+        setSelectedId( id);
+    }
+
+    function cancelEdit() {
+        setSelectedId(null);
+    }
 
     function deleteColor (id){
         const colorHex = colors.find(c => c.id === id)?.hex || 'diese Farbe';
@@ -59,6 +68,10 @@ function App() {
                         color={hex}
                         role={role}
                         contrastText={contrastText}
+                        selectedColor={selectedId === id ? {id, hex, role, contrastText} : null}
+                        colors={colors}
+                        setColors={setColors}
+                        onEdit={editColor}
                         onDelete={deleteColor}
                     />
                     ))
