@@ -14,9 +14,29 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                     border: borderStyle
                 }}
             >
-                <div>{color}</div>
-                <div>{role || 'primary'}</div>
-                <div>contrast: {contrastText || 'white'}</div>
+                <div className="color-display">
+                    <span className="color-hex">{color} </span>
+                    <button
+                        className="copy-btn"
+                        onClick={async () => {
+                            try {
+                                await navigator.clipboard.writeText(color);
+                            } catch (err) {
+                                console.error('Clipboard fehlgeschlagen:', err);
+                            }
+                        }}
+                        title="Farbe kopieren"
+                    >
+                        📋
+                    </button>
+                </div>
+
+                <div className="color-role">
+                    {role || 'primary'}
+                </div>
+                <div className="color-contrast">
+                    contrast: {contrastText || 'white'}
+                </div>
                 <button
                     className="edit-btn"
                     onClick={() => onEdit(id)}
