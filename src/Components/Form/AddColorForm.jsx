@@ -10,13 +10,18 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
     const contrastRef = useRef(null);
     const submitRef = useRef(null);
 
-    const updateHex = (e) => setHex(e.target.value);
-    const updateContrastText = (e) => setContrastText(e.target.value);
-    const updateRole = (e) => setRole(e.target.value);
+    function updateHex (event) {
+        setHex(event.target.value);
+    }
+    function updateContrastText (event) {
+        setContrastText(event.target.value);
+    }
+    function updateRole(event) {
+        setRole(event.target.value);
+    }
 
-    const addColor = (event) => {
+    function addColor(event){
         event.preventDefault();
-
 
         const newColor = {
             id: crypto.randomUUID(),
@@ -27,7 +32,7 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
         setColors([newColor, ...colors]);
         submitRef.current?.blur();
         setIsFormVisible(false);
-    };
+    }
 
     return (
         <form>
