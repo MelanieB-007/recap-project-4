@@ -12,13 +12,14 @@ import {useState} from "react";
 function App() {
     const [colors, setColors] = useState(initialColors);
     const [isFormVisible, setIsFormVisible] = useState(false);
-    const [selectedId, setSelectedId] = useState(null);
+    const [selectedId, setSelectedId] = useState(null);  // Bleibt Objekt/Null
 
     function editColor(id) {
-        setSelectedId( id);
+        const color = colors.find(c => c.id === id);
+        setSelectedId(color);
     }
 
-    function deleteColor (id){
+    function deleteColor(id) {
         const colorHex = colors.find(c => c.id === id)?.hex || 'diese Farbe';
         const confirm = window.confirm(
             `Do you really want to delete the color "${colorHex}"?\nThis action cannot be undone.`
@@ -47,6 +48,8 @@ function App() {
                         colors={colors}
                         setColors={setColors}
                         setIsFormVisible={setIsFormVisible}
+                        selectedColor={null}
+                        isEditMode={false}
                     />
                 </div>
             )}
@@ -58,18 +61,18 @@ function App() {
                     </div>
                 ) : (
                     colors.map(({id, hex, role, contrastText}) => (
-                    <Color
-                        key={id}
-                        id={id}
-                        color={hex}
-                        role={role}
-                        contrastText={contrastText}
-                        selectedColor={selectedId === id ? {id, hex, role, contrastText} : null}
-                        colors={colors}
-                        setColors={setColors}
-                        onEdit={editColor}
-                        onDelete={deleteColor}
-                    />
+                        <Color
+                            key={id}
+                            id={id}
+                            color={hex}
+                            role={role}
+                            contrastText={contrastText}
+                            selectedColor={selectedId === id || selectedId?.id === id ? {id, hex, role, contrastText} : null}
+                            colors={colors}
+                            setColors={setColors}
+                            onEdit={editColor}
+                            onDelete={deleteColor}
+                        />
                     ))
                 )}
             </div>

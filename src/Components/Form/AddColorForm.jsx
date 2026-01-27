@@ -1,6 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
+export default function AddColorForm({colors, setColors, setIsFormVisible, selectedColor,
+                                         isEditMode = false, onCancel}) {
     const [role, setRole] = useState('primary');
     const [hex, setHex] = useState("#ff4a11");
     const [contrastText, setContrastText] = useState("#ffffff");
@@ -10,19 +11,32 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
     const contrastRef = useRef(null);
     const submitRef = useRef(null);
 
-    function updateHex (event) {
+    // Prefill für Edit-Modus
+    useEffect(() => {
+        if (isEditMode && selectedColor) {
+            setRole(selectedColor.role || 'primary');
+            setHex(selectedColor.hex || selectedColor.color || "#ff4a11");
+            setContrastText(selectedColor.contrastText || selectedColor.contrast || "#ffffff");
+        } else {
+            // Reset für Add-Modus
+            setRole('primary');
+            setHex("#ff4a11");
+            setContrastText("#ffffff");
+        }
+    }, [isEditMode, selectedColor]);
+
+    function updateHex(event) {
         setHex(event.target.value);
     }
-    function updateContrastText (event) {
+    function updateContrastText(event) {
         setContrastText(event.target.value);
     }
     function updateRole(event) {
         setRole(event.target.value);
     }
 
-    function addColor(event){
+    function addColor(event) {
         event.preventDefault();
-
         const newColor = {
             id: crypto.randomUUID(),
             role,
@@ -31,12 +45,38 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
         };
         setColors([newColor, ...colors]);
         submitRef.current?.blur();
-        setIsFormVisible(false);
+        if (setIsFormVisible) {
+            setIsFormVisible(false);
+        }
+        if (onCancel) {
+            onCancel();
+        }
     }
 
+    function updateColor(event) {
+        event.preventDefault();
+        if (!selectedColor?.id) return;
+
+        const updatedColor = {
+            id: selectedColor.id,
+            role,
+            hex,
+            contrastText
+        };
+
+        setColors(colors.map(c => c.id === selectedColor.id ? updatedColor : c));
+        submitRef.current?.blur();
+        if (onCancel) onCancel();
+    }
+
+    const handleSubmit = isEditMode ? updateColor : addColor;
+    const buttonText = isEditMode ? "✎ Update Color" : "➕ Add Color";
+
     return (
-        <form>
-            <label className="formAddButton__label">Role</label>
+        <form onSubmit={handleSubmit}>
+            <label className="formAddButton__label">
+                {isEditMode ? 'Edit' : 'New'} Role
+            </label>
             <input
                 ref={roleRef}
                 id="role"
@@ -49,7 +89,9 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
                 className="formAddButton__input"
             />
 
-            <label className="formAddButton__label">Hex</label>
+            <label className="formAddButton__label">
+                {isEditMode ? 'Edit' : 'New'} Hex
+            </label>
             <div className="formAddButton__input-row">
                 <input
                     ref={hexRef}
@@ -71,7 +113,9 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
                 />
             </div>
 
-            <label className="formAddButton__label">Contrast Text</label>
+            <label className="formAddButton__label">
+                {isEditMode ? 'Edit' : 'New'} Contrast Text
+            </label>
             <div className="formAddButton__input-row">
                 <input
                     ref={contrastRef}
@@ -95,11 +139,10 @@ export default function AddColorForm({ colors, setColors, setIsFormVisible }) {
 
             <button
                 ref={submitRef}
-                type="button"
-                onClick={addColor}
+                type="submit"
                 className="formAddButton__input formAddButton__input--submit"
             >
-                ➕ Add Color
+                {buttonText}
             </button>
         </form>
     );

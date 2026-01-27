@@ -4,7 +4,7 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
     const isEditing = !!selectedColor;
     const borderStyle = `4px solid ${color}`;
 
-    if(!isEditing) {
+    if (!isEditing) {
         return (
             <div
                 className="color-card"
@@ -51,9 +51,9 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                 colors={colors}
                 setColors={setColors}
                 selectedColor={selectedColor}
-                setIsFormVisible={false}
+                isEditMode={true}
                 onCancel={() => onEdit(null)}
             />
         </div>
-    )
+    );
 }
