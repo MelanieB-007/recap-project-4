@@ -46,7 +46,7 @@
 }
 
 .delete-btn:hover {
-    background: rgba(255,0,0,0.4);  /* Rot-Hover für Danger */
+    background: rgba(255,0,0,0.4);
     transform: scale(1.1);
 }
 

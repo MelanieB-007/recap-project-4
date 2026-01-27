@@ -42,7 +42,7 @@
 }
 
 .plus-toggle-btn:focus-visible {
-  outline: 2px solid rgba(255,255,255,0.8);  /* Nur bei explizitem Tab */
+  outline: 2px solid rgba(255,255,255,0.8);
 }
 
 .plus-toggle-btn:hover {
