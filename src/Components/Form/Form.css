@@ -46,7 +46,7 @@
 }
 
 .formAddButton__input:focus {
-    outline: none;
+    outline: 2px solid rgba(255,255,255,0.8);
     border-color: #3498db;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
@@ -98,6 +98,10 @@
     font-size: 1.1rem;
     transition: transform 0.2s, box-shadow 0.2s;
     height: auto;
+}
+
+.formAddButton__input--submit:focus {
+    outline: none;
 }
 
 .formAddButton__input--submit:hover {

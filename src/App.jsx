@@ -13,14 +13,22 @@ function App() {
     return (
         <>
             <div className="input-area">
-                <button className="plus-toggle-btn" onClick={() => setIsFormVisible(!isFormVisible)}>
+                <button
+                    className="plus-toggle-btn"
+                    onClick={() => setIsFormVisible(!isFormVisible)}
+                    tabIndex={-1}
+                >
                     {isFormVisible ? '➖' : '➕'}
                 </button>
             </div>
 
             {isFormVisible && (
                 <div className="formAddButton">
-                    <AddColorForm colors={colors} setColors={setColors} />
+                    <AddColorForm
+                        colors={colors}
+                        setColors={setColors}
+                        setIsFormVisible={setIsFormVisible}
+                    />
                 </div>
             )}
 
@@ -30,7 +38,8 @@ function App() {
                     key={id}
                     color={hex}
                     role={role}
-                    contrastText={contrastText} />
+                    contrastText={contrastText}
+                />
                 ))}
             </div>
         </>
