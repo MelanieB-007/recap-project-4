@@ -74,41 +74,51 @@
     transform: scale(1.1);
 }
 
+.edit-header {
+    margin-bottom: 0.5rem;
+}
+
+.close-edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    width: 44px;
+    height: 44px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.close-edit:hover {
+    background: rgba(255,0,0,0.9);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255,0,0,0.4);
+}
+
 @media (max-width: 480px) {
+    .close-edit {
+        top: -28px;
+        right: -16px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+    }
+
     .delete-btn {
         width: 28px;
         height: 28px;
         font-size: 1rem;
         bottom: 6px;
         right: 6px;
-    }
-}
-
-/* Edit-Form nur: Perfekter Glas-Look + Abstände */
-.color-card--editing {
-    height: auto !important;
-    min-height: 400px;
-    width: 100%;
-    max-width: 320px;
-    padding: 2rem 1.5rem;
-    margin: 1rem auto; /* ← Nur Edit hat Abstand oben/unten */
-    background: rgba(255, 255, 255, 0.18) !important;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 24px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-    animation: expand 0.3s ease-out;
-}
-
-.edit-header {
-    margin-bottom: 2.5rem; /* ← Mehr Platz zur Form */
-}
-
-/* Mobile Edit nur */
-@media (max-width: 480px) {
-    .color-card--editing {
-        min-height: 360px;
-        padding: 1.5rem;
-        margin: 0.75rem auto;
     }
 }

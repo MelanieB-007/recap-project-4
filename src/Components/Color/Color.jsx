@@ -37,12 +37,11 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
 
     return (
         <div className="formAddButton">
-
             <div className="edit-header">
                 <h3>Edit Color</h3>
                 <button
                     className="close-edit"
-                    onClick={() => onEdit(null)} // cancelEdit() triggert
+                    onClick={() => onEdit(null)}
                 >
                     ❌
                 </button>
@@ -55,7 +54,6 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                 setIsFormVisible={false}
                 onCancel={() => onEdit(null)}
             />
-
         </div>
     )
 }

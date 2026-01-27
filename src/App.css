@@ -38,7 +38,7 @@
 }
 
 .plus-toggle-btn:focus {
-  outline: none;  /* Sofort unsichtbar */
+  outline: none;
 }
 
 .plus-toggle-btn:focus-visible {
