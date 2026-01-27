@@ -18,10 +18,6 @@ function App() {
         setSelectedId( id);
     }
 
-    function cancelEdit() {
-        setSelectedId(null);
-    }
-
     function deleteColor (id){
         const colorHex = colors.find(c => c.id === id)?.hex || 'diese Farbe';
         const confirm = window.confirm(
