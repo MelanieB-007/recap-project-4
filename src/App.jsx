@@ -13,6 +13,10 @@ function App() {
     const [colors, setColors] = useState(initialColors);
     const [isFormVisible, setIsFormVisible] = useState(false);
 
+    function deleteColor (id){
+        setColors(colors.filter(c => c.id !== id));
+    }
+
     return (
         <>
             <div className="input-area">
@@ -39,9 +43,11 @@ function App() {
                 {colors.map(({id, hex, role, contrastText}) => (
                 <Color
                     key={id}
+                    id={id}
                     color={hex}
                     role={role}
                     contrastText={contrastText}
+                    onDelete={deleteColor}
                 />
                 ))}
             </div>

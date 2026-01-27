@@ -10,6 +10,7 @@
     text-align: left;
     margin: 0 auto 0 auto;
     padding: 0 12px;
+    position: relative;
 }
 
 .color-card div {
@@ -23,4 +24,38 @@
     align-items: center;
     gap: 0;
     padding:0;
+}
+
+.delete-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: rgba(255,0,0,0.4);  /* Rot-Hover für Danger */
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .delete-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        bottom: 6px;
+        right: 6px;
+    }
 }
