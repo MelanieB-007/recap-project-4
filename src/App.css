@@ -22,16 +22,16 @@
   z-index: 10;
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, #1e3a8a, #1e40af);
+  background: var(--color-bg-plus-toggle-btn);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: var(--border-button);
   border-radius: 16px;
   color: white;
   font-size: 1.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.4);
+  box-shadow: var(--box-shadow-plus-toogle-btn);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,13 +42,13 @@
 }
 
 .plus-toggle-btn:focus-visible {
-  outline: 2px solid rgba(255,255,255,0.8);
+  outline: var(--outline-plus-toogle-btn);
 }
 
 .plus-toggle-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
-  background: linear-gradient(135deg, #5dade2, #3498db);
+  box-shadow: var(--box-shadow-plus-toogle-btn-hover);
+  background: var(--color-bg-plus-toogle-btn-hover);
 }
 
 .empty-state {
@@ -59,10 +59,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.1);
+  background: var(--color-bg-empty-state);
   border-radius: 28px;
-  border: 2px dashed rgba(255,255,255,0.3);
-  color: white;
+  border: var(--border-empty-state);
+  color: var(--color-text-light);
   font-weight: 500;
   text-align: center;
   font-size: 1rem;
@@ -77,6 +77,6 @@
     width: 56px;
     height: 56px;
     font-size: 2.1rem;
-    border-radius: 18px;
+    border-radius: var(--border-radius);
   }
 }
