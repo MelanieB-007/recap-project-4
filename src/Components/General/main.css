@@ -3,13 +3,15 @@
     display: flex;
     align-items: flex-start !important;
     justify-content: flex-start !important;
+    overflow: hidden;
     padding: 3rem 1rem;
+    max-width: var(--max-width-container);
+
     background: var(--color-bg-main);
-    border: var(--border);
-    border-radius: var(--border-radius);
     backdrop-filter: var(--glass-blur);
     transition: var(--transition-all);
-    overflow: hidden;
+    border: var(--border);
+    border-radius: var(--border-radius);
 }
 
 .main:hover {

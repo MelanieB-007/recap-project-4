@@ -1,6 +1,7 @@
 .app-colors {
   padding: 3rem 1.5rem 2rem;
   width: 100%;
+  max-width: var(--max-width-container);
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;

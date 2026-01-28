@@ -5,14 +5,14 @@
     align-items: flex-start;
     justify-content: center;
 
-    width: 320px;
-    height: 120px;
+    width: var(--width-color-card);
+    height: var(--height-color-card);
     text-align: left;
     margin: 0 1rem 1.5rem 1rem;
     padding: 25px 50px 20px 0;
 
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
+    border: var(--border-color-card);
+    border-radius: var(--border-radius);
 
     font-weight: 700;
     font-size: 0.85rem;
@@ -23,7 +23,6 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
-
 
 .color-card div {
     line-height: 1.1;
@@ -39,6 +38,7 @@
     align-items: center;
     gap: 0;
     width: 100%;
+    max-width: var(--max-width-container);
     padding:0;
 }
 

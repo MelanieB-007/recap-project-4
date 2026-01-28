@@ -1,14 +1,16 @@
 .footer {
-    height: 60px;
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
+    height: 60px;
+    max-width: var(--max-width-container);
+
+    backdrop-filter: var(--glass-blur);
+    transition: var(--transition-all);
     background: var(--color-bg-footer);
     border: var(--border);
     border-radius: var(--border-radius);
-    backdrop-filter: var(--glass-blur);
-    transition: var(--transition-all);
     box-shadow: var(--box-shadow);
 }
 
