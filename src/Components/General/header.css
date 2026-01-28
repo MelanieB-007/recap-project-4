@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    background: var(--color-bg-header);
+    border:var(--border);
+    border-radius: var(--border-radius);
+    backdrop-filter: var(--glass-blur);
+    transition: var(--transition-all);
+    box-shadow: var(--box-shadow);
+    padding: 0 15px;
+}
+
+.header svg {
+    width: 100%;
+    height: auto;
+    max-width: 360px;
+}
+
+.header:hover {
+    box-shadow: var(--box-shadow-hover);
+    background: var(--color-bg-header-hover);
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 85px;
+        padding: 0 12px;
+    }
+}

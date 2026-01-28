@@ -34,7 +34,7 @@ function App() {
         <>
             <div className="input-area">
                 <button
-                    className="plus-toggle-btn"
+                    className="button add-button"
                     onClick={() => setIsFormVisible(!isFormVisible)}
                     tabIndex={-1}
                 >

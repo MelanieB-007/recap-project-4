@@ -18,11 +18,6 @@
     font-size: 13px;
 }
 
-.contrast-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
 .contrast-container {
     display: flex;
     align-items: center;
@@ -30,11 +25,6 @@
     margin-top: 12px;
     font-size: 14px;
     font-family: system-ui, sans-serif;
-}
-
-.label-text {
-    font-weight: 500;
-    color: var(--color-form-label);
 }
 
 .loading-text,

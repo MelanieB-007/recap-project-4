@@ -17,7 +17,7 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                 <div className="color-display">
                     <span className="color-hex">{color} </span>
                     <button
-                        className="copy-btn"
+                        className="button copy-btn"
                         onClick={async () => {
                             try {
                                 await navigator.clipboard.writeText(color);
@@ -38,14 +38,14 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                     contrast: {contrastText || "white"}
                 </div>
                 <button
-                    className="edit-btn"
+                    className="button edit-button"
                     onClick={() => onEdit(id)}
                     aria-label="change color"
                 >
                     ✎
                 </button>
                 <button
-                    className="delete-btn"
+                    className="button delete-button"
                     onClick={() => onDelete(id)}
                     aria-label="delete Color"
                 >
@@ -60,7 +60,7 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
             <div className="edit-header">
                 <h3>Edit Color</h3>
                 <button
-                    className="close-edit"
+                    className="button close-edit-button"
                     onClick={() => onEdit(null)}
                 >
                     ❌
