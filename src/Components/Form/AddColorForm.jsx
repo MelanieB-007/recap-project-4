@@ -8,8 +8,6 @@ export default function AddColorForm({
                                          selectedColor,
                                          isEditMode = false,
                                          onCancel,
-                                         bgColor,        // ← Hinzugefügt
-                                         textColor       // ← Hinzugefügt
                                      }) {
     const [role, setRole] = useState('primary');
     const [hex, setHex] = useState("#ff4a11");
@@ -124,7 +122,10 @@ export default function AddColorForm({
                     className="formAddButton__input formAddButton__input--color"
                 />
             </div>
-
+            <ColorCardCheck
+                bgColor={hex}
+                textColor={contrastText}
+            />
             <button
                 ref={submitRef}
                 type="submit"
