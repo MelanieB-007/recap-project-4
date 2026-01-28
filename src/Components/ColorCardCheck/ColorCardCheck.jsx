@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import {ArrowPathIcon } from '@heroicons/react/24/outline';
 
 function ColorCardCheck({ bgColor, textColor, onContrastUpdate }) {
     const [contrastResult, setContrastResult] = useState(null);
@@ -52,21 +51,19 @@ function ColorCardCheck({ bgColor, textColor, onContrastUpdate }) {
 
 
     return (
-        <div style={{
-            display: 'flex', alignItems: 'center', gap: '12px',
-            marginTop: '12px', fontSize: '14px', fontFamily: 'system-ui, sans-serif'
-        }}>
-            <span style={{ fontWeight: 500, color: '#374151' }}>Overall:</span>
+        <div className="contrast-container">
+            <span className="label-text">Overall Constract Score:</span>
 
             {loading ? (
-                <span style={{ color: '#9ca3af' }}>loading...</span>
+                <span className="loading-text">loading...</span>
             ) : contrastResult?.Overall ? (
                 <>
                     {contrastResult.Overall === 'Yup' && (
                         <span
                             role="img"
                             aria-label="WCAG AAA/AA konform"
-                            style={{ fontSize: '20px', color: '#10b981' }}
+                            className="icon-yup"
+                            aria-hidden="true"
                         >
                             ✅
                         </span>
@@ -75,7 +72,8 @@ function ColorCardCheck({ bgColor, textColor, onContrastUpdate }) {
                         <span
                             role="img"
                             aria-label="Teilkonform WCAG AA Large"
-                            style={{ fontSize: '20px', color: '#f59e0b' }}
+                            className="icon-kinda"
+                            aria-hidden="true"
                         >
                             ⚠️
                         </span>
@@ -84,14 +82,15 @@ function ColorCardCheck({ bgColor, textColor, onContrastUpdate }) {
                         <span
                             role="img"
                             aria-label="Nicht WCAG konform"
-                            style={{ fontSize: '20px', color: '#ef4444' }}
+                            className="icon-nope"
+                            aria-hidden="true"
                         >
                             ❌
                         </span>
                     )}
                 </>
             ) : (
-                <span style={{ color: '#9ca3af' }}>no data</span>
+                <span className="no-data-text">no data</span>
             )}
         </div>
     );

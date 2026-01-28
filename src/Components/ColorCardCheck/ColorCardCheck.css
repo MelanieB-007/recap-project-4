@@ -23,14 +23,36 @@
     height: 20px;
 }
 
-.icon.yup {
+.contrast-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-family: system-ui, sans-serif;
+}
+
+.label-text {
+    font-weight: 500;
+    color: var(--color-form-label);
+}
+
+.loading-text,
+.no-data-text {
+    color: var(--color-text-loading);
+}
+
+.icon-yup {
+    font-size: 20px;
     color: var(--color-icon-yup);
 }
 
-.icon.kinda {
+.icon-kinda {
+    font-size: 20px;
     color: var(--color-icon-kinda);
 }
 
-.icon.nope {
+.icon-nope {
+    font-size: 20px;
     color: var(--color-icon-nope);
 }

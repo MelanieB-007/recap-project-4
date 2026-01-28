@@ -55,6 +55,7 @@
     --font-family-contrast-checker: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --color-text-light: #00ffff;
     --color-form-label: #333;
+    --color-text-loading: #9ca3af;
 
     --outline-add-butto-input: 2px solid rgba(255,255,255,0.8);
 
