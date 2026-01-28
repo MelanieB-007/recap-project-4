@@ -1,16 +1,18 @@
 .color-card {
-    width: 320px;
-    height: 100px;
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: flex-start;
     justify-content: center;
-    font-weight: 700;
-    font-size: 0.85rem;
+
+    width: 320px;
+    height: 120px;
     text-align: left;
     margin: 0 auto 0 auto;
-    padding: 0 12px;
-    position: relative;
+    padding: 25px 50px 20px 0;
+
+    font-weight: 700;
+    font-size: 0.85rem;
 }
 
 .color-card div {
@@ -22,11 +24,11 @@
 }
 
 .colors-grid {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
+    width: 100%;
     padding:0;
 }
 
@@ -39,22 +41,47 @@
 }
 
 .color-hex {
-    font-size: 1.2rem;
-    font-weight: 800;
-    font-family: var(--font-family-color-headline);
+    flex: 1;
+    line-height: 1.1;
+
     background: var(--color-bg-change-btn);
     backdrop-filter: blur(10px);
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     border: var(--border-button);
-    flex: 1;
-    line-height: 1.1;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--font-family-color-headline);
 }
 
-.color-role,
 .color-contrast {
     font-size: 0.8rem;
     opacity: 0.9;
+}
+
+.color-role {
+    font-size: 1.0rem;
+    padding: 10px 0;
+    opacity: 0.9;
+}
+
+.container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.color-display,
+.color-role,
+.color-contrast {
+    margin-left: 20px;
 }
 
 @media (max-width: 480px) {
