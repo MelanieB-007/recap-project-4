@@ -22,14 +22,14 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 12px;
+    margin-top: 15px;
     font-size: 14px;
-    font-family: system-ui, sans-serif;
+    font-family: var(--font-family);
 }
 
 .loading-text,
 .no-data-text {
-    color: var(--color-text-loading);
+    color: var(--color-form-label);
 }
 
 .icon-yup {

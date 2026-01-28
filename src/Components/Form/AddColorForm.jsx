@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import ColorCardCheck from "../ColorCardCheck/ColorCardCheck.jsx";
+import "../ColorCardCheck/ColorCardCheck.css";
 
 export default function AddColorForm({
                                          colors,
@@ -119,7 +120,7 @@ export default function AddColorForm({
                     name="hexcolor"
                     value={hex}
                     onChange={updateHex}
-                    className="formAddButton__input formAddButton__input--color"
+                    className="formAddButton__input"
                 />
             </div>
 
@@ -143,7 +144,7 @@ export default function AddColorForm({
                     name="contrast-textcolor"
                     value={contrastText}
                     onChange={updateContrastText}
-                    className="formAddButton__input formAddButton__input--color"
+                    className="formAddButton__input"
                 />
             </div>
             <ColorCardCheck

@@ -38,13 +38,24 @@
 
 .formAddButton__input {
     height: 35px;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--color-form-label);
+    font-size: 1rem;
+
+    background: var(--color-bg-input);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
     border: var(--border-input);
     border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: border-color 0.2s;
-    background: var(--color-bg-input);
     box-sizing: border-box;
+}
+
+.formAddButton__input[type="color"] {
+    appearance: none;
+    width: 48px;
+    padding: 0.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .formAddButton__input:focus {
@@ -62,29 +73,6 @@
 .formAddButton__input-row .formAddButton__input {
     flex: 1;
     min-width: 0;
-}
-
-.formAddButton__input-row .formAddButton__input--color {
-    width: 30px !important;
-    height: 46px;
-    padding: 0;
-    border: var(--border-input);
-    border-radius: 12px !important;
-    cursor: pointer;
-    flex-shrink: 0;
-    background-clip: content-box;
-    appearance: none;
-    position: relative;
-}
-
-.formAddButton__input-row .formAddButton__input--color::-webkit-color-swatch {
-    border-radius: 10px;
-    border: none;
-}
-
-.formAddButton__input-row .formAddButton__input--color::-moz-color-swatch {
-    border-radius: 10px;
-    border: none;
 }
 
 .formAddButton__input--submit {

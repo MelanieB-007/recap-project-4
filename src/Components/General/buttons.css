@@ -16,7 +16,7 @@
 }
 
 .button:hover {
-    background: var(--color-bg-change-btn-hover);
+    background: var(--box-shadow-input-submit);
     transform: scale(1.1);
 }
 
