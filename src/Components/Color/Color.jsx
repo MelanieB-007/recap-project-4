@@ -22,32 +22,32 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                             try {
                                 await navigator.clipboard.writeText(color);
                             } catch (err) {
-                                console.error('Clipboard fehlgeschlagen:', err);
+                                console.error('Clipboard error:', err);
                             }
                         }}
-                        title="Farbe kopieren"
+                        title="Copy color"
                     >
                         📋
                     </button>
                 </div>
 
                 <div className="color-role">
-                    {role || 'primary'}
+                    {role || "primary"}
                 </div>
                 <div className="color-contrast">
-                    contrast: {contrastText || 'white'}
+                    contrast: {contrastText || "white"}
                 </div>
                 <button
                     className="edit-btn"
                     onClick={() => onEdit(id)}
-                    aria-label="Farbe ändern"
+                    aria-label="change color"
                 >
                     ✎
                 </button>
                 <button
                     className="delete-btn"
                     onClick={() => onDelete(id)}
-                    aria-label="Farbe löschen"
+                    aria-label="delete Color"
                 >
                     🗑️
                 </button>
@@ -68,11 +68,11 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
             </div>
 
             <AddColorForm
-                colors={colors}
-                setColors={setColors}
-                selectedColor={selectedColor}
-                isEditMode={true}
-                onCancel={() => onEdit(null)}
+                colors = {colors}
+                setColors = {setColors}
+                selectedColor = {selectedColor}
+                isEditMode = {true}
+                onCancel = {() => onEdit(null)}
             />
         </div>
     );

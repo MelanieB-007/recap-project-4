@@ -14,17 +14,26 @@
     --color-bg-footer-hover: rgba(0, 123, 255, 0.25);
     --color-bg-plus-toggle-btn: linear-gradient(135deg, #1e3a8a, #1e40af);
     --color-bg-plus-toogle-btn-hover: linear-gradient(135deg, #5dade2, #3498db);
+    --color-bg-change-btn: rgba(255,255,255,0.2);
+    --color-bg-change-btn-hover: rgba(255,0,0,0.4);
     --color-bg-empty-state: rgba(255,255,255,0.1);
+    --color-bg-button-close-edit: linear-gradient(135deg, #1e3a8a, #1e40af);
+    --color-bg-button-close-edit-hover: rgba(255,0,0,0.9);
 
     --border: 1px solid rgba(0, 255, 255, 0.4);
     --border-button: 1px solid rgba(255, 255, 255, 0.3);
+    --border-button-close-edit: 2px solid rgba(255,255,255,0.6);
     --border-empty-state: 2px dashed rgba(255,255,255,0.3);
     --border-radius: 20px;
+    --border-radius-circle: 50%;
 
     --box-shadow: 0 8px 32px rgba(0, 123, 255, 0.2);
     --box-shadow-hover: 0 12px 40px var(--neon-glow);
     --box-shadow-plus-toogle-btn: 0 4px 16px rgba(52, 152, 219, 0.4);
     --box-shadow-plus-toogle-btn-hover: 0 6px 20px rgba(52, 152, 219, 0.6);
+    --box-shadow-button-close-edit: 0 8px 20px rgba(255,0,0,0.3);
+    --box-shadow-button-close-edit-hover: 0 10px 25px rgba(255,0,0,0.4);
+    --box-shadow-copy-btn: 0 2px 8px rgba(0, 0, 0, 0.2);
 
     --outline-plus-toogle-btn: 2px solid rgba(255,255,255,0.8);
 
@@ -33,6 +42,7 @@
     --neon-glow: rgba(0, 255, 255, 0.3);
 
     --font-family: system-ui, -apple-system, sans-serif;
+    --font-family-color-headline: 'Courier New', monospace;
     --color-text-light: #00ffff;
 }
 
