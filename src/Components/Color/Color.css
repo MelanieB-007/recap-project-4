@@ -8,8 +8,11 @@
     width: 320px;
     height: 120px;
     text-align: left;
-    margin: 0 auto 0 auto;
+    margin: 0 1rem 1.5rem 1rem;
     padding: 25px 50px 20px 0;
+
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
 
     font-weight: 700;
     font-size: 0.85rem;
