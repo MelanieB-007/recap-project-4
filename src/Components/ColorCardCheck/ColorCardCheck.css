@@ -1,0 +1,58 @@
+.contrast-checker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.contrast-label {
+    font-weight: 500;
+    color: #374151;
+}
+
+.contrast-loading,
+.contrast-no-data {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.contrast-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon.yup { color: #10b981; }
+.icon.kinda { color: #f59e0b; }
+.icon.nope { color: #ef4444; }
+
+.contrast-reload {
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.contrast-reload:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.contrast-reload:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.reload-icon {
+    width: 16px;
+    height: 16px;
+}
