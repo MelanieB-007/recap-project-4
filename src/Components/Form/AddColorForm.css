@@ -5,11 +5,11 @@
     max-width: 320px;
     margin: 1rem auto;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--color-bg-add-button);
     backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    border: var(--border-add-button);
+    box-shadow: var(--box-shadow-add-button);
 }
 
 @keyframes slideIn {
@@ -32,25 +32,25 @@
 .formAddButton__label {
     font-weight: 700;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--color-form-label);
     display: block;
 }
 
 .formAddButton__input {
     height: 44px;
     padding: 0.75rem;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: var(--border-input);
     border-radius: 12px;
     font-size: 1rem;
     transition: border-color 0.2s;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--color-bg-input);
     box-sizing: border-box;
 }
 
 .formAddButton__input:focus {
-    outline: 2px solid rgba(255,255,255,0.8);
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: var(--outline-add-butto-input);
+    border-color: var(--border-color-input-focus);
+    box-shadow: var(--box-shadow-input-focus);
 }
 
 .formAddButton__input-row {
@@ -68,7 +68,7 @@
     width: 30px !important;
     height: 46px;
     padding: 0;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: var(--border-input);
     border-radius: 12px !important;
     cursor: pointer;
     flex-shrink: 0;
@@ -83,14 +83,14 @@
 }
 
 .formAddButton__input-row .formAddButton__input--color::-moz-color-swatch {
-    border-radius: 10px;  /* ← Firefox */
+    border-radius: 10px;
     border: none;
 }
 
 .formAddButton__input--submit {
-    background: linear-gradient(135deg, #1e3a8a, #1e40af);
-    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
-    color: white;
+    background: var(--color-bg-button-close-edit);
+    box-shadow: var(--box-shadow-input-submit);
+    color: var(--color-text-light);
     font-weight: 700;
     border: none;
     padding: 1rem;
@@ -107,7 +107,7 @@
 
 .formAddButton__input--submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+    box-shadow: var(--box-shadow-input-submit-hover);
 }
 
 @media (max-width: 480px) {

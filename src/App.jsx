@@ -10,9 +10,9 @@ import "./Components/Color/Color.css";
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-    const [colors, setColors] = useLocalStorageState("colors", {defaultValue:initialColors});
+    const [colors, setColors] = useLocalStorageState("colors", {defaultValue: initialColors});
     const [isFormVisible, setIsFormVisible] = useLocalStorageState("isFormVisible", {defaultValue: false});
-    const [selectedId, setSelectedId] = useLocalStorageState("selectedId", {defaultValue:null});
+    const [selectedId, setSelectedId] = useLocalStorageState("selectedId", {defaultValue: null});
 
     function editColor(id) {
         const color = colors.find(c => c.id === id);
@@ -45,11 +45,11 @@ function App() {
             {isFormVisible && (
                 <div className="formAddButton">
                     <AddColorForm
-                        colors={colors}
-                        setColors={setColors}
-                        setIsFormVisible={setIsFormVisible}
-                        selectedColor={null}
-                        isEditMode={false}
+                        colors = {colors}
+                        setColors = {setColors}
+                        setIsFormVisible = {setIsFormVisible}
+                        selectedColor = {null}
+                        isEditMode = {false}
                     />
                 </div>
             )}
@@ -62,16 +62,18 @@ function App() {
                 ) : (
                     colors.map(({id, hex, role, contrastText}) => (
                         <Color
-                            key={id}
-                            id={id}
-                            color={hex}
-                            role={role}
-                            contrastText={contrastText}
-                            selectedColor={selectedId === id || selectedId?.id === id ? {id, hex, role, contrastText} : null}
-                            colors={colors}
-                            setColors={setColors}
-                            onEdit={editColor}
-                            onDelete={deleteColor}
+                            key = {id}
+                            id = {id}
+                            color = {hex}
+                            role = {role}
+                            contrastText = {contrastText}
+                            selectedColor = {selectedId === id || selectedId?.id === id ?
+                                {id, hex, role, contrastText} :
+                                null}
+                            colors = {colors}
+                            setColors = {setColors}
+                            onEdit = {editColor}
+                            onDelete = {deleteColor}
                         />
                     ))
                 )}

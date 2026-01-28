@@ -1,53 +1,63 @@
-import {useRef, useEffect, useState} from "react";
+import { useState, useRef, useEffect } from "react";
+import ColorCardCheck from "../ColorCardCheck/ColorCardCheck.jsx";
 
-export default function AddColorForm({colors, setColors, setIsFormVisible, selectedColor,
-                                         isEditMode = false, onCancel}) {
-    const [role, setRole] = useState("primary");
-    const [hex, setHex] = useState("#ff4a11");
-    const [contrastText, setContrastText] = useState("#ffffff");
+export default function AddColorForm({
+                                         colors,
+                                         setColors,
+                                         setIsFormVisible,
+                                         selectedColor,
+                                         isEditMode = false,
+                                         onCancel,
+                                     }) {
+    const DEFAULT_ROLE = "primary";
+    const DEFAULT_HEX = "#000000";
+    const DEFAULT_CONTRAST_TEXT = "#ffffff";
+
+    const [role, setRole] = useState(DEFAULT_ROLE);
+    const [hex, setHex] = useState(DEFAULT_HEX);
+    const [contrastText, setContrastText] = useState(DEFAULT_CONTRAST_TEXT);
 
     const roleRef = useRef(null);
     const hexRef = useRef(null);
     const contrastRef = useRef(null);
     const submitRef = useRef(null);
 
-    // Prefill für Edit-Modus
     useEffect(() => {
         if (isEditMode && selectedColor) {
-            setRole(selectedColor.role || "primary");
-            setHex(selectedColor.hex ||  "#ff4a11");
-            setContrastText(selectedColor.contrastText || "#ffffff");
+            setRole(selectedColor.role || DEFAULT_ROLE);
+            setHex(selectedColor.hex ||  DEFAULT_HEX);
+            setContrastText(selectedColor.contrastText || DEFAULT_CONTRAST_TEXT);
         } else {
-            // Reset für Add-Modus
-            setRole("primary");
-            setHex("#ff4a11");
-            setContrastText("#ffffff");
+            setRole(DEFAULT_ROLE);
+            setHex(DEFAULT_HEX);
+            setContrastText(DEFAULT_CONTRAST_TEXT);
         }
     }, [isEditMode, selectedColor]);
+
 
     function updateHex(event) {
         setHex(event.target.value);
     }
+
     function updateContrastText(event) {
         setContrastText(event.target.value);
     }
+
     function updateRole(event) {
         setRole(event.target.value);
     }
 
     function addColor(event) {
         event.preventDefault();
-        const newColor = {
-            id: crypto.randomUUID(),
-            role,
-            hex,
-            contrastText
-        };
+
+        const newColor = { id: crypto.randomUUID(), role, hex, contrastText };
         setColors([newColor, ...colors]);
         submitRef.current?.blur();
+
         if (setIsFormVisible) {
             setIsFormVisible(false);
         }
+
         if (onCancel) {
             onCancel();
         }
@@ -55,18 +65,18 @@ export default function AddColorForm({colors, setColors, setIsFormVisible, selec
 
     function updateColor(event) {
         event.preventDefault();
-        if (!selectedColor?.id) return;
 
-        const updatedColor = {
-            id: selectedColor.id,
-            role,
-            hex,
-            contrastText
-        };
+        if (!selectedColor?.id) {
+            return;
+        }
 
+        const updatedColor = { id: selectedColor.id, role, hex, contrastText };
         setColors(colors.map(c => c.id === selectedColor.id ? updatedColor : c));
         submitRef.current?.blur();
-        if (onCancel) onCancel();
+
+        if (onCancel) {
+            onCancel();
+        }
     }
 
     const handleSubmit = isEditMode ? updateColor : addColor;
@@ -136,7 +146,10 @@ export default function AddColorForm({colors, setColors, setIsFormVisible, selec
                     className="formAddButton__input formAddButton__input--color"
                 />
             </div>
-
+            <ColorCardCheck
+                bgColor={hex}
+                textColor={contrastText}
+            />
             <button
                 ref={submitRef}
                 type="submit"
