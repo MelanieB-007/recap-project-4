@@ -18,6 +18,13 @@
     font-size: 0.85rem;
 }
 
+.color-card:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+
 .color-card div {
     line-height: 1.1;
 }
