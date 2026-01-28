@@ -15,17 +15,17 @@ export default function AddColorForm({
     const [hex, setHex] = useState("#ff4a11");
     const [contrastText, setContrastText] = useState("#ffffff");
 
-    // Rest deines Codes bleibt IDENTISCH...
     const roleRef = useRef(null);
     const hexRef = useRef(null);
     const contrastRef = useRef(null);
     const submitRef = useRef(null);
 
+
     useEffect(() => {
         if (isEditMode && selectedColor) {
-            setRole(selectedColor.role || 'primary');
-            setHex(selectedColor.hex || selectedColor.color || "#ff4a11");
-            setContrastText(selectedColor.contrastText || selectedColor.contrast || "#ffffff");
+            setRole(selectedColor.role || "primary");
+            setHex(selectedColor.hex ||  "#ff4a11");
+            setContrastText(selectedColor.contrastText || "#ffffff");
         } else {
             setRole('primary');
             setHex("#ff4a11");
@@ -62,29 +62,74 @@ export default function AddColorForm({
 
     return (
         <form onSubmit={handleSubmit}>
-            {/* DEINE INPUTS BLEIBEN 100% GLEICH */}
-            <label className="formAddButton__label">{isEditMode ? 'Edit' : 'New'} Role</label>
-            <input ref={roleRef} id="role" name="role" type="text" value={role} onChange={updateRole} placeholder="primary" onFocus={() => roleRef.current?.select()} className="formAddButton__input" />
-
-            <label className="formAddButton__label">{isEditMode ? 'Edit' : 'New'} Hex</label>
-            <div className="formAddButton__input-row">
-                <input ref={hexRef} id="hex" name="hex" type="text" value={hex} onChange={updateHex} placeholder="#ff4a11" onFocus={() => hexRef.current?.select()} className="formAddButton__input" />
-                <input type="color" name="hexcolor" value={hex} onChange={updateHex} className="formAddButton__input formAddButton__input--color" />
-            </div>
-
-            <label className="formAddButton__label">{isEditMode ? 'Edit' : 'New'} Contrast Text</label>
-            <div className="formAddButton__input-row">
-                <input ref={contrastRef} id="contrasttext" name="contrasttext" type="text" value={contrastText} onChange={updateContrastText} placeholder="#ffffff" onFocus={() => contrastRef.current?.select()} className="formAddButton__input" />
-                <input type="color" name="contrast-textcolor" value={contrastText} onChange={updateContrastText} className="formAddButton__input formAddButton__input--color" />
-            </div>
-
-            {/* ColorCardCheck mit lokalen States! */}
-            <ColorCardCheck
-                bgColor={hex}
-                textColor={contrastText}
+            <label className="formAddButton__label">
+                {isEditMode ? 'Edit' : 'New'} Role
+            </label>
+            <input
+                ref={roleRef}
+                id="role"
+                name="role"
+                type="text"
+                value={role}
+                onChange={updateRole}
+                placeholder={role}
+                onFocus={() => roleRef.current?.select()}
+                className="formAddButton__input"
             />
 
-            <button ref={submitRef} type="submit" className="formAddButton__input formAddButton__input--submit">
+            <label className="formAddButton__label">
+                {isEditMode ? 'Edit' : 'New'} Hex
+            </label>
+            <div className="formAddButton__input-row">
+                <input
+                    ref={hexRef}
+                    id="hex"
+                    name="hex"
+                    type="text"
+                    value={hex}
+                    onChange={updateHex}
+                    placeholder={hex}
+                    onFocus={() => hexRef.current?.select()}
+                    className="formAddButton__input"
+                />
+                <input
+                    type="color"
+                    name="hexcolor"
+                    value={hex}
+                    onChange={updateHex}
+                    className="formAddButton__input formAddButton__input--color"
+                />
+            </div>
+
+            <label className="formAddButton__label">
+                {isEditMode ? 'Edit' : 'New'} Contrast Text
+            </label>
+            <div className="formAddButton__input-row">
+                <input
+                    ref={contrastRef}
+                    id="contrasttext"
+                    name="contrasttext"
+                    type="text"
+                    value={contrastText}
+                    onChange={updateContrastText}
+                    placeholder={contrastText}
+                    onFocus={() => contrastRef.current?.select()}
+                    className="formAddButton__input"
+                />
+                <input
+                    type="color"
+                    name="contrast-textcolor"
+                    value={contrastText}
+                    onChange={updateContrastText}
+                    className="formAddButton__input formAddButton__input--color"
+                />
+            </div>
+
+            <button
+                ref={submitRef}
+                type="submit"
+                className="formAddButton__input formAddButton__input--submit"
+            >
                 {buttonText}
             </button>
         </form>
