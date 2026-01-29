@@ -18,6 +18,7 @@
     font-size: 0.85rem;
     outline: none !important;
     outline-offset: 0 !important;
+    tab-index: -1;
 }
 
 .color-card:hover {
@@ -65,6 +66,8 @@
     font-size: 1.2rem;
     font-weight: 800;
     font-family: var(--font-family-color-headline);
+
+    tab-index: -1;
 }
 
 .color-contrast {
@@ -110,6 +113,21 @@
 .color-role,
 .color-contrast {
     margin-left: 20px;
+}
+
+/* NEU: Auto-Fokus komplett killen (1 Karte + mehrere) */
+.color-hex:focus,
+.color-hex:focus-visible,
+.color-hex:focus-within {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Accessibility: Tab-Fokus sichtbar machen */
+.color-hex:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.5) !important;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5) !important;
 }
 
 @media (max-width: 480px) {
