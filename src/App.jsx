@@ -17,6 +17,7 @@ function App() {
     function editColor(id) {
         const color = colors.find(c => c.id === id);
         setSelectedId(color);
+        setIsFormVisible(false);
     }
 
     function deleteColor(id) {
@@ -53,6 +54,8 @@ function App() {
                         setIsFormVisible = {setIsFormVisible}
                         selectedColor = {null}
                         isEditMode = {false}
+
+
                     />
                 </div>
             )}
