@@ -21,6 +21,7 @@
     --color-bg-button-close-edit: linear-gradient(135deg, #1e3a8a, #1e40af);
     --color-bg-button-close-edit-hover: rgba(255,0,0,0.9);
     --color-bg-input: rgba(255, 255, 255, 0.9);
+    --color-bg-header-section: rgba(255, 255, 255, 0.12);
 
     --border: 1px solid rgba(0, 255, 255, 0.4);
     --border-button: 1px solid rgba(255, 255, 255, 0.3);

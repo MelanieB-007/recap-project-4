@@ -32,7 +32,10 @@ function App() {
 
     return (
         <>
-            <div className="input-area">
+            <div className="header-section">
+                <h1 className="theme-title">
+                    Default Theme
+                </h1>
                 <button
                     className="button add-button"
                     onClick={() => setIsFormVisible(!isFormVisible)}

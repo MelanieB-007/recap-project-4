@@ -33,8 +33,57 @@
   font-size: 1rem;
 }
 
+.header-section {
+  position: relative;
+  width: 100%;
+  max-width: var(--width-color-card);
+  margin: 0 auto 1.5rem;
+  min-height: 60px;
+  padding: 1rem 3rem 1rem 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-header-section);
+  backdrop-filter: blur(12px);
+  border: var(--border-button);
+  border-radius: var(--border-radius);
+}
+
+.theme-title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-form-label);
+  white-space: nowrap;
+
+}
+
+.add-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+}
+
 @media (max-width: 480px) {
-  .input-area {
-    margin: 0.25rem auto 0.25rem;
+  .header-section {
+    max-width: 340px;
+    margin: 0 auto 0.75rem;
+  }
+
+  .theme-title {
+    top: -22px;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+  }
+
+  .add-button {
+    top: -12px;
+    right: 8px;
+    width: 48px !important;
+    height: 48px !important;
   }
 }
