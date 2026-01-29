@@ -14,14 +14,14 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                     border: borderStyle
                 }}
             >
-                <div className="color-display">
-                    <span className="color-hex">{color} </span>
+                <div className="color-display" tabIndex={-1}>
+                    <div className="color-hex" data-content={color} tabIndex={-1}>{color}</div>
                 </div>
 
-                <div className="color-role">
+                <div className="color-role" tabIndex={-1}>
                     {role || "primary"}
                 </div>
-                <div className="color-contrast">
+                <div className="color-contrast" tabIndex={-1}>
                     contrast: {contrastText || "white"}
                 </div>
                 <div className="container">

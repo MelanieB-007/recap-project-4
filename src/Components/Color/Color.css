@@ -16,6 +16,8 @@
 
     font-weight: 700;
     font-size: 0.85rem;
+    outline: none !important;
+    outline-offset: 0 !important;
 }
 
 .color-card:hover {
@@ -68,12 +70,26 @@
 .color-contrast {
     font-size: 0.8rem;
     opacity: 0.9;
+    /* Nicht anklickbar */
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -khtml-user-select: none !important;
+    pointer-events: none !important;
+    outline: none !important;
 }
 
 .color-role {
     font-size: 1.0rem;
     padding: 10px 0;
     opacity: 0.9;
+    /* Nicht anklickbar */
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -khtml-user-select: none !important;
+    pointer-events: none !important;
+    outline: none !important;
 }
 
 .container {
@@ -86,6 +102,8 @@
     display: flex;
     flex-direction: row;
     gap: 8px;
+    /* Buttons immer klickbar */
+    pointer-events: auto !important;
 }
 
 .color-display,
