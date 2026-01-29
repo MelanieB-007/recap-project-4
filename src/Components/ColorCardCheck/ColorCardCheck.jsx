@@ -52,7 +52,7 @@ function ColorCardCheck({ bgColor, textColor, onContrastUpdate }) {
 
     return (
         <div className="contrast-container">
-            <span className="label-text">Overall Constract Score:</span>
+            <span className="formAddButton__label">Overall Constract Score:</span>
 
             {loading ? (
                 <span className="loading-text">loading...</span>

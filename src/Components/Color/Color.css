@@ -1,134 +1,45 @@
 .color-card {
-    width: 320px;
-    height: 100px;
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: flex-start;
     justify-content: center;
+
+    width: var(--width-color-card);
+    height: var(--height-color-card);
+    text-align: left;
+    margin: 0 1rem 1.5rem 1rem;
+    padding: 25px 50px 20px 0;
+
+    border: var(--border-color-card);
+    border-radius: var(--border-radius);
+
     font-weight: 700;
     font-size: 0.85rem;
-    text-align: left;
-    margin: 0 auto 0 auto;
-    padding: 0 12px;
-    position: relative;
+}
+
+.color-card:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .color-card div {
     line-height: 1.1;
 }
 
-.colors-grid {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding:0;
-}
-
-.delete-btn {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: var(--border-radius-circle);
-    background: var(--color-bg-change-btn);
-    color: var(--color-text-light);
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.2s;
-}
-
-.delete-btn:hover {
-    background: var(--color-bg-change-btn-hover);
-    transform: scale(1.1);
-}
-
-.edit-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: var(--border-radius-circle);
-    background: var(--color-bg-change-btn);
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.2s;
-}
-
-.edit-btn:hover {
-    background: var(--color-bg-change-btn-hover);
-    transform: scale(1.1);
-}
-
 .edit-header {
     margin-bottom: 0.5rem;
 }
 
-.close-edit {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    width: 44px;
-    height: 44px;
-    border: var(--border-button-close-edit);
-    border-radius: var(--border-radius-circle);
-    background: var(--color-bg-button-close-edit);
-    color: white;
-    font-size: 1.6rem;
-    cursor: pointer;
+.colors-grid {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--box-shadow-button-close-edit);
-    transition: all 0.2s ease;
-}
-
-.close-edit:hover {
-    background: var(--color-bg-button-close-edit-hover);
-    transform: scale(1.05);
-    box-shadow: var(--box-shadow-button-close-edit-hover);
-}
-
-.copy-btn {
-    background: var(--color-bg-change-btn);
-    backdrop-filter: blur(10px);
-    border:var(--border-button);
-    border-radius: 8px;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    color: var(--color-text-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    transition: all 0.2s ease;
-    box-shadow: var(--box-shadow-copy-btn);
-}
-
-.copy-btn:hover {
-    background: var(--color-bg-change-btn-hover);
-    transform: scale(1.1);
-}
-
-.copy-btn:active {
-    transform: scale(0.98);
+    gap: 0;
+    width: 100%;
+    max-width: var(--max-width-container);
+    padding:0;
 }
 
 .color-display {
@@ -140,50 +51,52 @@
 }
 
 .color-hex {
-    font-size: 1.2rem;
-    font-weight: 800;
-    font-family: var(--font-family-color-headline);
+    flex: 1;
+    line-height: 1.1;
+
     background: var(--color-bg-change-btn);
     backdrop-filter: blur(10px);
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     border: var(--border-button);
-    flex: 1;
-    line-height: 1.1;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--font-family-color-headline);
 }
 
-.color-role,
 .color-contrast {
     font-size: 0.8rem;
     opacity: 0.9;
 }
 
+.color-role {
+    font-size: 1.0rem;
+    padding: 10px 0;
+    opacity: 0.9;
+}
+
+.container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.color-display,
+.color-role,
+.color-contrast {
+    margin-left: 20px;
+}
 
 @media (max-width: 480px) {
-    .close-edit {
-        top: -28px;
-        right: -16px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
-    }
-
-    .delete-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 1rem;
-        bottom: 6px;
-        right: 6px;
-    }
-
     .color-hex {
         font-size: 1.1rem;
         padding: 0.4rem 0.6rem;
-    }
-
-    .copy-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
     }
 }

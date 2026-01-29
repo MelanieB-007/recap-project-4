@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import ColorCardCheck from "../ColorCardCheck/ColorCardCheck.jsx";
+import "../ColorCardCheck/ColorCardCheck.css";
 
 export default function AddColorForm({
                                          colors,
@@ -21,6 +22,8 @@ export default function AddColorForm({
     const hexRef = useRef(null);
     const contrastRef = useRef(null);
     const submitRef = useRef(null);
+    const colorRef = useRef(null);
+    const hexColorRef = useRef(null);
 
     useEffect(() => {
         if (isEditMode && selectedColor) {
@@ -114,13 +117,24 @@ export default function AddColorForm({
                     onFocus={() => hexRef.current?.select()}
                     className="formAddButton__input"
                 />
-                <input
-                    type="color"
-                    name="hexcolor"
-                    value={hex}
-                    onChange={updateHex}
-                    className="formAddButton__input formAddButton__input--color"
-                />
+                <div className="form-input-wrapper">
+                    <div className="custom-color-picker">
+                        <input
+                            type="color"
+                            name="hexcolor"
+                            value={hex}
+                            onChange={updateHex}
+                            className="hidden-color-input"
+                            ref={hexColorRef}
+                        />
+                        <div
+                            className="color-preview-base"
+                            style={{ background: hex }}
+                            onClick={() => hexColorRef.current?.click()}
+                            title="Hex-Farbe ändern"
+                        />
+                    </div>
+                </div>
             </div>
 
             <label className="formAddButton__label">
@@ -138,13 +152,38 @@ export default function AddColorForm({
                     onFocus={() => contrastRef.current?.select()}
                     className="formAddButton__input"
                 />
-                <input
-                    type="color"
-                    name="contrast-textcolor"
-                    value={contrastText}
-                    onChange={updateContrastText}
-                    className="formAddButton__input formAddButton__input--color"
-                />
+                <div className="form-input-wrapper">
+                    <div className="custom-color-picker">
+                        <input
+                            type="color"
+                            name="contrast-textcolor"
+                            value={contrastText}
+                            onChange={updateContrastText}
+                            className="hidden-color-input"
+                            ref={colorRef}
+                        />
+                        <div
+                            className="color-preview"
+                            style={{
+                                backgroundColor: contrastText,
+                                backgroundImage: 'none',
+                                background: contrastText,
+                                height: '35px',
+                                padding: '0.75rem 1rem',
+                                border: 'var(--border-input)',
+                                borderRadius: 'var(--border-radius)',
+                                boxSizing: 'border-box',
+                                backdropFilter: 'blur(10px)',
+                                transition: 'all 0.3s ease',
+                                cursor: 'pointer',
+                                position: 'relative',
+                                overflow: 'hidden'
+                            }}
+                            onClick={() => colorRef.current?.click()}
+                            title="Textfarbe ändern"
+                        />
+                    </div>
+                </div>
             </div>
             <ColorCardCheck
                 bgColor={hex}

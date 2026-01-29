@@ -16,19 +16,6 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
             >
                 <div className="color-display">
                     <span className="color-hex">{color} </span>
-                    <button
-                        className="copy-btn"
-                        onClick={async () => {
-                            try {
-                                await navigator.clipboard.writeText(color);
-                            } catch (err) {
-                                console.error('Clipboard error:', err);
-                            }
-                        }}
-                        title="Copy color"
-                    >
-                        📋
-                    </button>
                 </div>
 
                 <div className="color-role">
@@ -37,20 +24,37 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                 <div className="color-contrast">
                     contrast: {contrastText || "white"}
                 </div>
-                <button
-                    className="edit-btn"
-                    onClick={() => onEdit(id)}
-                    aria-label="change color"
-                >
-                    ✎
-                </button>
-                <button
-                    className="delete-btn"
-                    onClick={() => onDelete(id)}
-                    aria-label="delete Color"
-                >
-                    🗑️
-                </button>
+                <div className="container">
+                    <div className="button-group">
+                        <button
+                            className="button"
+                            onClick={async () => {
+                                try {
+                                    await navigator.clipboard.writeText(color);
+                                } catch (err) {
+                                    console.error('Clipboard error:', err);
+                                }
+                            }}
+                            title="Copy color"
+                        >
+                            📋
+                        </button>
+                        <button
+                            className="button"
+                            onClick={() => onEdit(id)}
+                            aria-label="change color"
+                        >
+                            ✎
+                        </button>
+                        <button
+                            className="button"
+                            onClick={() => onDelete(id)}
+                            aria-label="delete Color"
+                        >
+                            🗑️
+                        </button>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -60,7 +64,7 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
             <div className="edit-header">
                 <h3>Edit Color</h3>
                 <button
-                    className="close-edit"
+                    className="button close-edit-button"
                     onClick={() => onEdit(null)}
                 >
                     ❌

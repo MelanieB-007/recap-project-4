@@ -2,9 +2,10 @@
     position: relative;
     overflow: visible;
     width: 100%;
-    max-width: 320px;
+    max-width: var(--width-color-card);
     margin: 1rem auto;
     padding: 1.5rem;
+
     background: var(--color-bg-add-button);
     backdrop-filter: blur(12px);
     border-radius: var(--border-radius);
@@ -33,17 +34,19 @@
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--color-form-label);
-    display: block;
 }
 
 .formAddButton__input {
-    height: 44px;
-    padding: 0.75rem;
-    border: var(--border-input);
-    border-radius: 12px;
+    height: 35px;
+    padding: 0.75rem 1rem;
+    color: var(--color-form-label);
     font-size: 1rem;
-    transition: border-color 0.2s;
+
     background: var(--color-bg-input);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: var(--border-input);
+    border-radius: var(--border-radius);
     box-sizing: border-box;
 }
 
@@ -64,41 +67,27 @@
     min-width: 0;
 }
 
-.formAddButton__input-row .formAddButton__input--color {
-    width: 30px !important;
-    height: 46px;
-    padding: 0;
-    border: var(--border-input);
-    border-radius: 12px !important;
-    cursor: pointer;
-    flex-shrink: 0;
-    background-clip: content-box;
-    appearance: none;
-    position: relative;
-}
-
-.formAddButton__input-row .formAddButton__input--color::-webkit-color-swatch {
-    border-radius: 10px;
-    border: none;
-}
-
-.formAddButton__input-row .formAddButton__input--color::-moz-color-swatch {
-    border-radius: 10px;
-    border: none;
-}
-
 .formAddButton__input--submit {
-    background: var(--color-bg-button-close-edit);
-    box-shadow: var(--box-shadow-input-submit);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    height: 40px;
+    width: 200px;
+    padding: 1rem 1.5rem;
+    margin: 1rem auto 0 auto;
+    text-align: center;
+
     color: var(--color-text-light);
     font-weight: 700;
-    border: none;
-    padding: 1rem;
-    border-radius: 16px;
-    cursor: pointer;
     font-size: 1.1rem;
+
+    background: var(--color-bg-button-close-edit);
+    box-shadow: var(--box-shadow-input-submit);
     transition: transform 0.2s, box-shadow 0.2s;
-    height: auto;
+    border: none;
+    border-radius: var(--border-radius);
 }
 
 .formAddButton__input--submit:focus {
@@ -109,6 +98,73 @@
     transform: translateY(-2px);
     box-shadow: var(--box-shadow-input-submit-hover);
 }
+
+.custom-color-picker {
+    position: relative;
+    display: inline-block;
+}
+
+.hidden-color-input {
+    display: none;
+}
+
+.hidden-color-input {
+    display: none !important;
+}
+
+.custom-color-picker {
+    position: relative;
+}
+
+
+.color-preview:hover {
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+}
+
+.color-preview:focus-within {
+    outline: 2px solid var(--color-bg-button-close-edit);
+}
+
+.hidden-color-input {
+    display: none;
+}
+
+.form-input-wrapper {
+    width: 100%;
+    max-width: 270px;
+}
+
+.custom-color-picker {
+    width: 100%;
+}
+
+.color-preview {
+    width: 100% !important;
+}
+
+.color-preview-base {
+    height: 35px;
+    padding: 0.75rem 1rem;
+    border: var(--border-input);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.color-preview-base:hover {
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+}
+
+.color-preview-base:focus-within {
+    outline: 2px solid var(--color-bg-button-close-edit);
+}
+
+
 
 @media (max-width: 480px) {
     .formAddButton {
