@@ -12,11 +12,11 @@ import useLocalStorageState from "use-local-storage-state";
 function App() {
     const [colors, setColors] = useLocalStorageState("colors", {defaultValue: initialColors});
     const [isFormVisible, setIsFormVisible] = useLocalStorageState("isFormVisible", {defaultValue: false});
-    const [selectedId, setSelectedId] = useLocalStorageState("selectedId", {defaultValue: null});
+    const [selectedColor, setSelectedColor] = useLocalStorageState("selectedColor", {defaultValue: null});
 
     function editColor(id) {
         const color = colors.find(c => c.id === id);
-        setSelectedId(color);
+        setSelectedColor(color);
         setIsFormVisible(false);
     }
 
@@ -71,7 +71,7 @@ function App() {
                             color = {hex}
                             role = {role}
                             contrastText = {contrastText}
-                            selectedColor = {selectedId === id || selectedId?.id === id ?
+                            selectedColor = {selectedColor?.id === id ?
                                 {id, hex, role, contrastText} :
                                 null}
                             colors = {colors}

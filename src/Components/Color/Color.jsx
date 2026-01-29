@@ -15,7 +15,9 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                 }}
             >
                 <div className="color-display" tabIndex={-1}>
-                    <div className="color-hex" data-content={color} tabIndex={-1}>{color}</div>
+                    <div className="color-hex" data-content={color} tabIndex={-1}>
+                        {color}
+                    </div>
                 </div>
 
                 <div className="color-role" tabIndex={-1}>
@@ -36,6 +38,7 @@ export default function Color({ color, role, contrastText, id, selectedColor, co
                                 }
                             }}
                             title="Copy color"
+                            aria-label="Copy color"
                         >
                             📋
                         </button>

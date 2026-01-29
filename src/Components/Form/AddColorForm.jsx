@@ -131,7 +131,7 @@ export default function AddColorForm({
                             className="color-preview-base"
                             style={{ background: hex }}
                             onClick={() => hexColorRef.current?.click()}
-                            title="Hex-Farbe ändern"
+                            title="change >hex color"
                         />
                     </div>
                 </div>
@@ -180,7 +180,7 @@ export default function AddColorForm({
                                 overflow: 'hidden'
                             }}
                             onClick={() => colorRef.current?.click()}
-                            title="Textfarbe ändern"
+                            title="change text color"
                         />
                     </div>
                 </div>
