@@ -86,7 +86,6 @@
     font-size: 1.0rem;
     padding: 10px 0;
     opacity: 0.9;
-    /* Nicht anklickbar */
     user-select: none !important;
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
@@ -105,7 +104,6 @@
     display: flex;
     flex-direction: row;
     gap: 8px;
-    /* Buttons immer klickbar */
     pointer-events: auto !important;
 }
 
@@ -115,7 +113,6 @@
     margin-left: 20px;
 }
 
-/* NEU: Auto-Fokus komplett killen (1 Karte + mehrere) */
 .color-hex:focus,
 .color-hex:focus-visible,
 .color-hex:focus-within {
@@ -124,7 +121,6 @@
     box-shadow: none !important;
 }
 
-/* Accessibility: Tab-Fokus sichtbar machen */
 .color-hex:focus-visible {
     outline: 2px solid rgba(255,255,255,0.5) !important;
     box-shadow: 0 0 0 2px rgba(255,255,255,0.5) !important;

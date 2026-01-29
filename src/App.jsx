@@ -54,8 +54,6 @@ function App() {
                         setIsFormVisible = {setIsFormVisible}
                         selectedColor = {null}
                         isEditMode = {false}
-
-
                     />
                 </div>
             )}

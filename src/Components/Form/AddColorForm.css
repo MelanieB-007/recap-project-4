@@ -116,7 +116,6 @@
     position: relative;
 }
 
-
 .color-preview:hover {
     box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
 }
@@ -163,8 +162,6 @@
 .color-preview-base:focus-within {
     outline: 2px solid var(--color-bg-button-close-edit);
 }
-
-
 
 @media (max-width: 480px) {
     .formAddButton {
